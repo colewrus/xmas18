@@ -6,6 +6,12 @@ TagManager:
   tags:
   - ground
   - heart
+  - axe
+  - beer
+  - target
+  - start
+  - trainTunnel
+  - coin
   layers:
   - Default
   - TransparentFX
