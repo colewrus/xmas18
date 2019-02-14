@@ -161,9 +161,14 @@ public class playerMovement : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       
 
-        if(collision.tag == "start" && !gameStart)
+        if (collision.tag == "coin")
+        {
+            collision.gameObject.SetActive(false);
+            coinCount++;
+            coins.text = "" + coinCount;
+        }
+        if (collision.tag == "start" && !gameStart)
         {
            
             if(collision.name == "heart")
@@ -183,6 +188,7 @@ public class playerMovement : MonoBehaviour {
             {
                 music_script.instance.PlaySong(3);
             }
+        
 
             for (int i = 0; i < selectors.Length; i++) {
                 selectors[i].SetActive(false);
