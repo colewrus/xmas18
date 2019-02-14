@@ -10,12 +10,20 @@ public class playerMovement : MonoBehaviour {
     //Movement
     float direction;
     Rigidbody2D rb;
-    public float speed;
+    public float moveSpeed;
     public float jumpMin; //minimum swipe distance to jump
     public float jumpPower;
     public float xMoveMin; //how far does x input need to be from X position to move?
     Vector3 position;
     public bool jump;
+    Vector2 startTouch;
+    Vector2 touchEnd;
+    bool move;
+    Vector2 dir;
+        
+
+    [Tooltip("Control the sprite direction flip here?")]
+    public bool flipSprite;
 
     //spawn
     public GameObject spawner;
@@ -73,9 +81,14 @@ public class playerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        Mousemovement();
+
+
         TapMovement();
-	}
+
+        if (transform.position.y <= -18)
+            transform.position = respawn.position;
+
+    }
 
 
     void Mousemovement()
@@ -101,7 +114,7 @@ public class playerMovement : MonoBehaviour {
             {
                 anim.SetBool("running", true);
                 direction = (pos.x > (Screen.width / 2)) ? 1 : -1;
-                rb.velocity = new Vector3(direction * speed, rb.velocity.y);
+                rb.velocity = new Vector3(direction * moveSpeed, rb.velocity.y);
             }
             
         
@@ -183,6 +196,76 @@ public class playerMovement : MonoBehaviour {
 
     void TapMovement()
     {
+
+        if (Input.touchCount > 0)
+        {
+            Touch myTouch = Input.touches[0];
+
+            if (move)
+            {
+                rb.velocity = new Vector2(dir.x, rb.velocity.y);
+                anim.SetBool("running", true);
+            }
+
+            if (myTouch.phase == TouchPhase.Began) //--------------BEGIN
+            {
+                startTouch = myTouch.position;
+
+
+            }
+            else if (myTouch.phase == TouchPhase.Moved) //-----------------MOVED
+            {
+                if ((myTouch.position.x - startTouch.x) >= xMoveMin)
+                {
+
+                    move = true;
+                    dir = new Vector2(1 * moveSpeed, 0);
+
+                    if (flipSprite)
+                        this.GetComponent<SpriteRenderer>().flipX = false;
+
+                }
+                else if ((myTouch.position.x - startTouch.x) <= -xMoveMin)
+                {
+
+                    move = true;
+                    dir = new Vector2(-1 * moveSpeed, 0);
+
+                    if (flipSprite)
+                        this.GetComponent<SpriteRenderer>().flipX = true;
+
+                }
+            }
+            else if (myTouch.phase == TouchPhase.Ended) //-----------------------ENDED
+            {
+                touchEnd = myTouch.position;
+                move = false;
+                float x = touchEnd.x - startTouch.x;
+                float y = touchEnd.y - startTouch.y;
+
+                if (y >= jumpMin)
+                {
+                    //Debug.Log("Jump");
+                    Vector2 worldRelease = cam.ScreenToWorldPoint(touchEnd);
+                    Vector2 direction = worldRelease - new Vector2(transform.position.x, transform.position.y);
+                    direction = new Vector2(Mathf.Clamp(direction.x, -1, 1), direction.y * jumpPower);
+                    rb.AddForce(direction, ForceMode2D.Impulse);
+                    anim.SetBool("jumping", true);
+
+                }
+                else if (y <= -jumpMin)
+                {
+                    Vector2 worldRelease = cam.ScreenToWorldPoint(touchEnd);
+                    Vector2 direction = worldRelease - new Vector2(transform.position.x, transform.position.y);
+                    //rb.AddForce(direction * jumpPower, ForceMode2D.Impulse);
+
+                }
+                anim.SetBool("running", false);
+
+            }
+        }
+
+        /*
         if (Input.touchCount > 0)
         {
       
@@ -225,7 +308,7 @@ public class playerMovement : MonoBehaviour {
             }
 
         }
-
+        */
 
     }
 }
