@@ -1,13 +1,21 @@
 fileFormatVersion: 2
 guid: fac324b8ba78a0340992a13bf9b2f63b
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: xmasGames_0
-    21300002: xmasGames_1
-    21300004: xmasGames_2
-    21300006: xmasGames_3
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: xmasGames_0
+  - first:
+      213: 21300002
+    second: xmasGames_1
+  - first:
+      213: 21300004
+    second: xmasGames_2
+  - first:
+      213: 21300006
+    second: xmasGames_3
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
@@ -62,61 +70,66 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -136,6 +149,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3f89142d9adae374e869e00d70924acd
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -156,6 +170,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2a8b8ab925213574293e0665b4b72655
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -176,6 +191,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: decbdce424cf151428215eda58ea94f3
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -196,6 +212,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 942aa903ba62e2849b63ca01c7b895c6
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -204,10 +221,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: ddee34e0a9529714db6b89d48384fbc6
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

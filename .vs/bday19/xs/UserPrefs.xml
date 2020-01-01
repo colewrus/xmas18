@@ -1,15 +1,17 @@
 ﻿<Properties StartupConfiguration="{A633985B-09D9-7DF4-BDBB-E17AF05FE919}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Testing/BoardManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DialogueManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Testing/Mobjects.cs" Line="10" Column="1" />
-      <File FileName="Assets/Scripts/Testing/MatchMgr.cs" />
-      <File FileName="Assets/Scripts/Testing/BoardManager.cs" Line="108" Column="48" />
-      <File FileName="Assets/Scripts/Testing/Tile.cs" />
+      <File FileName="Assets/Scripts/DialogueTrigger.cs" Line="15" Column="6" />
+      <File FileName="Assets/Scripts/DialogueManager.cs" Line="67" Column="10" />
+      <File FileName="Assets/Scripts/IntroManager.cs" />
+      <File FileName="Assets/Scripts/Dialogue.cs" />
+      <File FileName="Assets/Scripts/PlayerPlatformerController.cs" />
+      <File FileName="Assets/Scripts/PhysicsObject.cs" Line="91" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="95a29242-048a-4988-87f7-9d180c2ad39e" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="790b4298-cc91-4f40-8547-2c31c4f17fb4" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

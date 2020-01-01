@@ -88,6 +88,7 @@ public class PhysicsObject : MonoBehaviour
             for (int i = 0; i < hitBufferList.Count; i++)
             {
                 Vector2 currentNormal = hitBufferList[i].normal;
+                
                 if(currentNormal.y > minGroundNormalY)
                 {
                     grounded = true;

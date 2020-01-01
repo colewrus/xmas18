@@ -8,9 +8,11 @@ using UnityEngine.UI;
 //From the Brackeys tutorial
 public class DialogueManager : MonoBehaviour
 {
-
+    //panel objects
+    public GameObject speechPanel;
     public Text nameText;
     public Text dialogueText;
+    public Image portrait;
 
     private Queue<string> sentences;
 
@@ -18,15 +20,18 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
+        speechPanel.SetActive(false);
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
 
-        //set animation bool
+        //set animation bool & make panel appear
+        speechPanel.SetActive(true);
 
         Debug.Log("starting convo with " + dialogue.name);
         nameText.text = dialogue.name;
+        portrait.sprite = dialogue.portrait;
 
         sentences.Clear();
 
@@ -65,5 +70,6 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         Debug.Log("end");
+        speechPanel.SetActive(false);
     }
 }
