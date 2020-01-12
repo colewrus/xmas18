@@ -16,9 +16,12 @@ public class PlayerPlatformerController : PhysicsObject
     protected override void ComputerVelocity()
     {
         Vector2 move = Vector2.zero;
-        move.x = Input.GetAxis("Horizontal");
-
-        if(Input.GetButtonDown("Jump") && grounded)
+       
+        move.x = ControllerInput._instance.xInput;
+        //move.x = Input.GetAxis("Horizontal"); 
+        //This was the default input method 
+        /*
+        if(Input.GetButtonDown("Jump") && grounded)   //jump method
         {
             velocity.y = jumpTakeOffSpeed;
         }
@@ -26,7 +29,19 @@ public class PlayerPlatformerController : PhysicsObject
         {
             if (velocity.y > 0)
                 velocity.y = velocity.y * 0.5f;
+        }*/
+
+        if (ControllerInput._instance.jump && grounded)   //jump method
+        {
+            velocity.y = jumpTakeOffSpeed;
         }
+        else if (!ControllerInput._instance.jump)
+        {
+            if (velocity.y > 0)
+                velocity.y = velocity.y * 0.5f;
+        }
+
+
 
         targetVelocity = move * maxSpeed;
 
